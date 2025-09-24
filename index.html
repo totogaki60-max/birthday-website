@@ -12,39 +12,43 @@
             height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            align-items: flex-start; /* Ubah ke flex-start biar konten nggak terpotong atas */
+            overflow-y: auto; /* Biar bisa discroll */
             color: #fff;
             text-align: center;
             position: relative;
+            padding-top: 20px; /* Tambah padding atas biar nggak nempel di tepi */
         }
         .container {
-            max-width: 600px;
-            padding: 20px;
-            background: rgba(255, 182, 193, 0.2); /* Latar pink transparan buat kesan romantis */
+            max-width: 90%; /* Lebih fleksibel buat HP */
+            padding: 15px;
+            background: rgba(255, 182, 193, 0.2); /* Latar pink transparan */
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); /* Bayangan pink buat efek lembut */
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); /* Bayangan pink */
+            min-height: 80vh; /* Minimal tinggi biar konten muat */
+            max-height: auto; /* Biar bisa discroll kalau konten panjang */
+            margin-bottom: 20px; /* Jarak bawah biar nggak nempel */
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em; /* Kurangin ukuran buat HP */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            color: #ff69b4; /* Pink cerah buat judul */
+            color: #ff69b4;
         }
         p {
-            font-size: 1.5em;
-            margin: 20px 0;
-            line-height: 1.6;
+            font-size: 1.2em; /* Ukuran teks lebih kecil buat HP */
+            margin: 15px 0;
+            line-height: 1.5;
         }
         .photo {
             max-width: 100%;
             border-radius: 10px;
-            margin: 20px 0;
-            border: 5px solid #ff69b4; /* Border pink buat foto */
+            margin: 15px 0;
+            border: 5px solid #ff69b4;
         }
         .heart {
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 15px; /* Kurangin ukuran hati buat HP */
+            height: 15px;
             background: #ff69b4;
             transform: rotate(-45deg);
         }
@@ -52,28 +56,28 @@
         .heart::before {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
             background: #ff69b4;
             border-radius: 50%;
         }
         .heart::before {
             left: 0;
-            top: -10px;
+            top: -7.5px;
         }
         .heart::after {
-            left: 10px;
+            left: 7.5px;
             top: 0;
         }
         .button {
             background-color: #ff69b4;
             color: white;
-            padding: 15px 30px;
+            padding: 12px 25px; /* Kurangin padding buat HP */
             text-decoration: none;
-            border-radius: 25px;
-            font-size: 1.2em;
+            border-radius: 20px;
+            font-size: 1em; /* Ukuran teks tombol lebih kecil */
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 15px;
             box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
             transition: transform 0.2s;
         }
@@ -126,7 +130,7 @@
                 particleCount: 100,
                 spread: 70,
                 origin: { y: 0.6 },
-                colors: ['#ff69b4', '#ffb6c1', '#ff99cc'] // Confetti pink buat tema
+                colors: ['#ff69b4', '#ffb6c1', '#ff99cc']
             });
         }
         setInterval(launchConfetti, 2000);
